@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Disk Scheduling Algorithms</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+
+  <!-- Custom style -->
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+  <!-- Favicon : CHANGE -->
+  <link rel="icon" href="images/icon.ico" type="image/x-icon" />
+  
+  <style>
+    /* Optional: Style for the typewriter text */
+   .type-writer {
+     
+      font-size: 32px;
+     
+      font-family: 'Times New Roman', serif;
+       color:hotpink;
+      border-color: aliceblue;
+      border-right: 2px solid #333;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      margin-bottom: 20px;
+      transition: color 0.5s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="first">
+    <!-- ============================================
+  ===================== HEADER =================== -->
+
+    <header class="shadow-md">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+
+          <!-- Logo -->
+          <a class="navbar-brand mr-5" href="index.html"><img src="images/heading.png" alt="" width="400px" /></a>
+          <!-- navbar brand used to add logo in start of navbar, can also use text instead -->
+
+          <!-- menu -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- ID = DATA TARGET FOR COLLAPSE BUTTON-->
+            <ul class="navbar-nav ml-auto">
+              <!-- margin left auto: ml-auto: does auto margin to left -->
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <!-- dropdown menu -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                  style="cursor: pointer;"style="font-family: 'Times New Roman', serif; font-weight: 900;">Visualize</a>
+                <div class="dropdown-menu" id="custom-dropdown-menu" style="color: aquamarine;">
+                  <a class="dropdown-item" href="FCFS/fcfs.html">FCFS</a>
+                  <a class="dropdown-item" href="SSTF/sstf.html">SSTF</a>
+                  <a class="dropdown-item" href="SCAN/scan.html">SCAN</a>
+                  <a class="dropdown-item" href="CSCAN/cscan.html">C-SCAN</a>
+                  <a class="dropdown-item" href="LOOK/look.html">LOOK</a>
+                  <a class="dropdown-item" href="CLOOK/clook.html">C-LOOK</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- /menu -->
+        </div>
+      </nav>
+      <!-- /Navbar -->
+
+    </header>
+
+    <!-- ============================================
+  ===================== MAIN =================== -->
+    <main class="py-3">
+      <div class="container">
+        <!-- Disk Scheduling -->
+        <div class="main-text" style="text-align: center;">
+          <div style="border: 2px solid #1976d2; background-color: #e3f2fd; padding: 15px; border-radius: 10px; text-align: center;">
+  <h1 style="color: #0d47a1; margin: 0;font-weight: 900;">DISK SCHEDULING</h1>
+</div>
+
+          <p style="color: white; font-size: 28px; font-family: 'Times New Roman', serif; font-weight: 700; text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);">
+  Disk scheduling is the process of determining the order in which the read/write operations to a computer's disk drive are carried out.
+</p>
+          
+
+          <!-- Typewriter effect span -->
+          <div>
+            
+            <span class="type-writer" data-wait="2000" data-words='["FCFS", "SSTF", "SCAN", "C-SCAN", "LOOK", "C-LOOK"]'></span>
+            
+          </div>
+        </div>
+      </div>
+      
+    </main>
+
+    <!-- Cards -->
+
+  <!-- Cards here -->
+</div>
+
+
+    <div class="section">
+      <div class="con">
+        <div class="cards">
+          <div class="box">
+            <div class="content">
+              <h2>FCFS</h2>
+              <p><b>The requests are addressed in the order they arrive in the disk queue. FCFS is the simplest
+                disk scheduling algorithm of all the scheduling algorithms.</b>
+              </p>
+              <a class="up" href="fcfs-info.html">How it Works</a>
+              <a class="down" href="FCFS/fcfs.html">Visualize</a>
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="box">
+            <div class="content">
+              <h2>SSTF</h2>
+              <p><b>The requests having shortest seek time are executed first. So, the seek
+                time of every request is calculated in advance and then they are scheduled accordingly.</b></p>
+              <a class="up" href="sstf-info.html">How it Works</a>
+              <a class="down" href="SSTF/sstf.html">Visualize</a>
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="box">
+            <div class="content">
+              <h2>SCAN</h2>
+              <p><b>The disk arm moves into a particular direction and services the requests coming,
+                after reaching the end of disk, it reverses direction and services the request
+                arriving in its path.</b></p>
+              <a class="up" href="scan-info.html">How it Works</a>
+              <a class="down" href="SCAN/scan.html">Visualize</a>
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="box">
+            <div class="content">
+              <h2>C-SCAN</h2>
+              <p><b>The disk arm moves in a circular fashion, that is the disk arm instead of reversing its direction goes
+                to the other end of the disk and starts servicing the requests from there.</b></p>
+              <a class="up" href="cscan-info.html">How it Works</a>
+              <a class="down" href="CSCAN/cscan.html">Visualize</a>
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="box">
+            <div class="content">
+              <h2>LOOK</h2>
+              <p><b>The disk arm in spite of going to the end of the disk goes only to the last request to be serviced in
+                front of the head and then reverses its direction from there only.</b></p>
+              <a class="up" href="look-info.html">How it Works</a>
+              <a class="down" href="LOOK/look.html">Visualize</a>
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="box">
+            <div class="content">
+              <h2>C-LOOK</h2>
+              <p><b>The disk arm in spite of reversing its direction from last request like in LOOK, instead goes to the
+                other end's last request. It prevents extra delay due to traversal to the end of the disk.</b></p>
+              <a class="up" href="clook-info.html">How it Works</a>
+              <a class="down" href="CLOOK/clook.html">Visualize</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--==============================
+      =============FOOTER ============-->
+    <div class="footer">
+      <div class="container">
+        <!-- Logo - About - Contact -->
+        <div class="row py-3 text-light">
+
+          <!-- Logo -->
+          <div class="col-lg-3">
+            <a href="index.html"><img src="images/footer.png" class="footer-logo img-fluid" width="200" draggable="false"
+                alt="Logo" /></a>
+          </div>
+
+          <!-- About -->
+          <div class="col-lg">
+            <h3>Disk Scheduling</h3>
+            <p>
+              Made by: Kritika Rana | Nikita Joshi | Vani Gupta | Aastha Thakur
+            </p>
+          </div>
+          <div class="col-lg-2">
+            <h3>Quick Links</h3>
+            <div class="footer-links">
+              <a href="fcfs-info.html">FCFS</a>
+              <a href="sstf-info.html">SSTF</a>
+              <a href="scan-info.html">SCAN</a>
+              <a href="cscan-info.html">C-SCAN</a>
+              <a href="look-info.html">LOOK</a>
+              <a href="clook-info.html">C-LOOK</a>
+            </div>
+          </div>
+
+          <!-- /contact me -->
+        </div>
+      </div>
+      <!-- /container -->
+    </div>
+    <!--/footer-->
+
+  </div>
+  <!-- first -->
+
+  <!-- Bootstrap core JavaScript -->
+  <!-- jQuery.js -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+  <!-- Bootstrap.min.js -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+
+  <!-- Navbar -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+  <script type="text/javascript">
+    var nav = document.querySelector('nav');
+
+    window.addEventListener('scroll', function () {
+      if (window.pageYOffset > 100) {
+        nav.classList.add('bg-dark', 'shadow');
+      } else {
+        nav.classList.remove('bg-dark', 'shadow');
+      }
+    });
+
+    // Typewriter effect class
+   class TypeWriter {
+  constructor(txtElement, words, wait = 2000) {
+    this.txtElement = txtElement;
+    this.words = words;
+    this.txt = '';
+    this.wordIndex = 0;
+    this.wait = parseInt(wait, 10);
+    this.isDeleting = false;
+    this.color = ['hotpink', 'aqua', 'lime', 'yellow', 'orange', 'lightcoral'];
+    this.colorIndex = 0;
+    this.type();
+  }
+
+  type() {
+    const current = this.wordIndex % this.words.length;
+    const fullTxt = this.words[current];
+
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.txtElement.innerHTML = `<span>${this.txt}</span>`;
+
+    // When full word typed, pause and then delete
+    let typeSpeed = 150;
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+      // Set color and pause before deleting
+      this.txtElement.style.color = this.colors[this.colorIndex];
+      this.colorIndex = (this.colorIndex + 1) % this.colors.length;
+      typeSpeed = this.wait;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      this.wordIndex++;
+      typeSpeed = 590; // Pause before typing next word
+    }
+
+    setTimeout(() => this.type(), typeSpeed);
+  }
+}
+
+// Init on DOM load
+document.addEventListener('DOMContentLoaded', init);
+
+function init() {
+  const txtElement = document.querySelector('.type-writer');
+  const words = JSON.parse(txtElement.getAttribute('data-words'));
+  const wait = txtElement.getAttribute('data-wait');
+  new TypeWriter(txtElement, words, wait);
+}
+
+</script>
+
+</body> </html>
