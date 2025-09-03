@@ -146,6 +146,27 @@
           </div>
         </div>
       </div>
+      <div class="text-center my-4">
+  <button 
+    onclick="goToCompare()"
+    style="
+      background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(216,158,232,1) 32%, rgba(252,70,107,1) 71%);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    "
+    onmouseover="this.style.transform='scale(1.05)'"
+    onmouseout="this.style.transform='scale(1)'"
+  >
+    Compare All Algorithms
+  </button>
+</div>
+
       <div class="newc tm-bg-dark-light tm-timeline-description">
         <h3 class="tm-text-orange tm-font-400">
 
@@ -176,7 +197,7 @@
 
       </div>
     </div>
-
+ <br><br><br><br>
     <!-- ============================================
     ===================== FOOTER =================== -->
     <div class="footer">
@@ -194,7 +215,7 @@
           <div class="col-lg">
             <h3>Disk Scheduling</h3>
             <p>
-             Made by:Kritika Rana | Nikita Joshi | Vani Gupta | Aastha Thakur
+             Made by: Kritika Rana 
           </div>
           
 
@@ -231,6 +252,22 @@
         nav.classList.remove('navbar-scrolled', 'shadow');
       }
     });
+    function goToCompare() {
+  const sequenceInput = document.getElementById("Sequence");
+  const headInput = document.getElementById("Head");
+
+  if (!sequenceInput || !headInput || !sequenceInput.value || !headInput.value) {
+    alert("Please enter both request sequence and head position.");
+    return;
+  }
+
+  const sequence = sequenceInput.value.trim();
+  const head = headInput.value.trim();
+
+  localStorage.setItem("disk_seq", sequence);
+  localStorage.setItem("disk_head", head);
+  window.location.href = "../compare.html";  // Adjust if file is at a different level
+}
   </script>
 
 </body>

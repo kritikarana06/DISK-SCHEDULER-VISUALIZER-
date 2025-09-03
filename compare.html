@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Disk Scheduling Comparison</title>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src="./FCFS/fcfs.js"></script>
+  <script src="./SSTF/sstf.js"></script>
+  <script src="./SCAN/scan.js"></script>
+  <script src="./CSCAN/cscan.js"></script>
+  <script src="./LOOK/look.js"></script>
+  <script src="./CLOOK/clook.js"></script>
+  <style>
+    body { background-color: #1206f0; color: white; font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+    #comparisonChartContainer { height: 400px; width: 100%; margin-top: 30px; }
+    .btn { padding: 10px 20px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <h1>Disk Scheduling: Average Seek Time Comparison</h1>
+  <div id="comparisonChartContainer"></div>
+
+  <script>
+    const sequence = localStorage.getItem("disk_seq").split(",").map(Number);
+    const head = parseInt(localStorage.getItem("disk_head"));
+
+    const results = {
+      FCFS: fcfs_man([...sequence], head)[0] / sequence.length,
+      SSTF: typeof sstf_man === "function" ? sstf_man([...sequence], head)[0] / sequence.length : 0,
+      SCAN: typeof scan_man === "function" ? scan_man([...sequence], head)[0] / sequence.length : 0,
+      "C-SCAN": typeof cscan_man === "function" ? cscan_man([...sequence], head)[0] / sequence.length : 0,
+      LOOK: typeof look_man === "function" ? look_man([...sequence], head)[0] / sequence.length : 0,
+      "C-LOOK": typeof clook_man === "function" ? clook_man([...sequence], head)[0] / sequence.length : 0
+    };
+
+    const chart = new CanvasJS.Chart("comparisonChartContainer", {
+      animationEnabled: true,
+      theme: "dark1",
+      title: { text: "Avg Seek Time (Lower is Better)" },
+      axisY: { title: "Avg Seek Time" },
+      data: [{
+        type: "column",
+        dataPoints: Object.entries(results).map(([label, y]) => ({ label, y }))
+      }]
+    });
+
+    chart.render();
+  </script>
+</body>
+</html>

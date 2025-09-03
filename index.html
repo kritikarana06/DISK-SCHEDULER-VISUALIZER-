@@ -16,23 +16,7 @@
   <!-- Favicon : CHANGE -->
   <link rel="icon" href="images/icon.ico" type="image/x-icon" />
   
-  <style>
-    /* Optional: Style for the typewriter text */
-   .type-writer {
-     
-      font-size: 32px;
-     
-      font-family: 'Times New Roman', serif;
-       color:hotpink;
-      border-color: aliceblue;
-      border-right: 2px solid #333;
-      white-space: nowrap;
-      overflow: hidden;
-      display: inline-block;
-      margin-bottom: 20px;
-      transition: color 0.5s ease;
-    }
-  </style>
+ 
 </head>
 
 <body>
@@ -99,11 +83,25 @@
           
 
           <!-- Typewriter effect span -->
-          <div>
-            
-            <span class="type-writer" data-wait="2000" data-words='["FCFS", "SSTF", "SCAN", "C-SCAN", "LOOK", "C-LOOK"]'></span>
-            
-          </div>
+          
+          <h2 style="
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 800;
+  position: relative;
+">
+  <span id="typeWrapper" style="
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    font-family: cursive;
+    background: linear-gradient(to right, #c4c4ce, #07e4e0, #0ea5e9);
+    color: white;
+    border-radius: 12px;
+    transition: transform 0.25s ease-in-out, padding 0.25s ease-in-out;
+  ">
+    <span id="typed-text"></span>
+  </span>
+</h2>
         </div>
       </div>
       
@@ -206,7 +204,7 @@
           <div class="col-lg">
             <h3>Disk Scheduling</h3>
             <p>
-              Made by: Kritika Rana | Nikita Joshi | Vani Gupta | Aastha Thakur
+              Made by: Kritika Rana 
             </p>
           </div>
           <div class="col-lg-2">
@@ -241,6 +239,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
   <!-- Navbar -->
   <script src="js/bootstrap.bundle.min.js"></script>
@@ -257,50 +256,11 @@
     });
 
     // Typewriter effect class
-   class TypeWriter {
-  constructor(txtElement, words, wait = 2000) {
-    this.txtElement = txtElement;
-    this.words = words;
-    this.txt = '';
-    this.wordIndex = 0;
-    this.wait = parseInt(wait, 10);
-    this.isDeleting = false;
-    this.color = ['hotpink', 'aqua', 'lime', 'yellow', 'orange', 'lightcoral'];
-    this.colorIndex = 0;
-    this.type();
-  }
+   
 
-  type() {
-    const current = this.wordIndex % this.words.length;
-    const fullTxt = this.words[current];
+  
 
-    if (this.isDeleting) {
-      this.txt = fullTxt.substring(0, this.txt.length - 1);
-    } else {
-      this.txt = fullTxt.substring(0, this.txt.length + 1);
-    }
-
-    this.txtElement.innerHTML = `<span>${this.txt}</span>`;
-
-    // When full word typed, pause and then delete
-    let typeSpeed = 150;
-
-    if (!this.isDeleting && this.txt === fullTxt) {
-      // Set color and pause before deleting
-      this.txtElement.style.color = this.colors[this.colorIndex];
-      this.colorIndex = (this.colorIndex + 1) % this.colors.length;
-      typeSpeed = this.wait;
-      this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === '') {
-      this.isDeleting = false;
-      this.wordIndex++;
-      typeSpeed = 590; // Pause before typing next word
-    }
-
-    setTimeout(() => this.type(), typeSpeed);
-  }
-}
-
+    
 // Init on DOM load
 document.addEventListener('DOMContentLoaded', init);
 
@@ -310,7 +270,16 @@ function init() {
   const wait = txtElement.getAttribute('data-wait');
   new TypeWriter(txtElement, words, wait);
 }
-
+new Typed("#typed-text", {
+      strings: [
+        "FCFS", "SSTF", "SCAN", "C-SCAN", "LOOK", "C-LOOK"
+      ],
+      typeSpeed: 60,
+      backSpeed: 30,
+      backDelay: 2000,
+      loop: true
+      
+    });
 </script>
 
 </body> </html>

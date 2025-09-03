@@ -143,7 +143,11 @@
             </div>
           </div>
         </div>
+        
       </div>
+      <div class="text-center my-4">
+  <button class="btn btn-warning" onclick="goToCompare()">Compare All Algorithms</button>
+</div>
       <div class="newc tm-bg-dark-light tm-timeline-description">
         <h3 class="tm-text-orange tm-font-400">
 
@@ -174,7 +178,7 @@
 
       </div>
     </div>
-
+  <br><br><br><br>
     <!-- ============================================
     ===================== FOOTER =================== -->
     <div class="footer">
@@ -192,7 +196,7 @@
           <div class="col-lg">
             <h3>Disk Scheduling</h3>
             <p>
-             Made by:Kritika Rana | Nikita Joshi | Vani Gupta | Aastha Thakur</div>
+             Made by: Kritika Rana</div>
           
           <!-- /contact me -->
         </div>
@@ -227,6 +231,22 @@
         nav.classList.remove('navbar-scrolled', 'shadow');
       }
     });
+    function goToCompare() {
+  const sequenceInput = document.getElementById("Sequence");
+  const headInput = document.getElementById("Head");
+
+  if (!sequenceInput || !headInput || !sequenceInput.value || !headInput.value) {
+    alert("Please enter both request sequence and head position.");
+    return;
+  }
+
+  const sequence = sequenceInput.value.trim();
+  const head = headInput.value.trim();
+
+  localStorage.setItem("disk_seq", sequence);
+  localStorage.setItem("disk_head", head);
+  window.location.href = "../compare.html";  // Adjust if file is at a different level
+}
   </script>
 
 </body>
