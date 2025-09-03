@@ -19,11 +19,15 @@ C-LOOK
 
 ✨ Features
 
-✔️ Implementation of 6 major disk scheduling algorithms in pure JavaScript
-✔️ Clean and interactive frontend built with HTML + CSS
-✔️ Step-by-step visualization of disk head movements
-✔️ Automatic calculation of total head movements
-✔️ Easy-to-use interface for students and educators
+✔️ Implementation of 6 major disk scheduling algorithms in pure JavaScript.
+
+✔️ Clean and interactive frontend built with HTML + CSS.
+
+✔️ Step-by-step visualization of disk head movements.
+
+✔️ Automatic calculation of total head movements.
+
+✔️ Easy-to-use interface for students and educators.
 
 🛠️ Tech Stack
 
